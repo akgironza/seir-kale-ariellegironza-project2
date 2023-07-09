@@ -12,8 +12,8 @@ myZebraSymptom Tracker gives users living with chronic illness a place to log an
 
 ## Mockup of UI
 
-![Desktop View] (link to image)
-![Mobile View] (link to image)
+![Desktop View](IMG_2151.jpg)
+![Mobile View](IMG_2152.jpg)
 
 ## List of Backend Endpoints
 
