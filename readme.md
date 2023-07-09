@@ -30,5 +30,5 @@ myZebraSymptom Tracker gives users living with chronic illness a place to log an
 
 ## ERD (ENTITY-RELATIONSHIP DIAGRAM)
 
-![Picture of ERD](link)
+![Picture of ERD](IMG_2150.jpg)
 
