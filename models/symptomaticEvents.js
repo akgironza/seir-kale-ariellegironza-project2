@@ -1,9 +1,13 @@
 const mongoose = require('./connection');
 
 const symptomaticEventSchema = new mongoose.Schema({
-    name: String
+    symptom: String,
+    startTime: Date,
+    endTime: Date,
+    treated: Boolean,
+    treatment: String,
 });
 
-const SymptomaticEvents = mongoose.model('symptom', symptomaticEventSchema);
+const SymptomaticEvents = mongoose.model('symptomaticEvent', symptomaticEventSchema);
 
 module.exports = SymptomaticEvents
