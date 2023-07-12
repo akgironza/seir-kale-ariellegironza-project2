@@ -1,21 +1,19 @@
 // DEPENDENCIES
-require('dotenv').config();
-const express = require('express');
-const morgan = require('morgan');
-const methodOverride = require('method-override');
+require("dotenv").config(); //import dotenv
+const express = require("express"); //import express
+const morgan = require("morgan"); //import morgan
+const methodOverride = require("method-override"); //import medthodoverride
+const symptomsRouter = require("./controllers/symptomaticEvents"); //import router
 
 // EXPRESS APP
-const app = express();
+const app = express(); //express application object
 
 // MIDDLEWARE
-app.use(morgan('tiny'));
-app.use(methodOverride('_method'));
-app.use(express.static('public'));
-
-// ROUTES
-app.get('/', (req, res) => {
-    res.send('hellooo world');
-});
+app.use(morgan("tiny"));
+app.use(express.static("public"));
+app.use(express.urlencoded({extended: false}));
+app.use(methodOverride("_method"));
+app.use("symptoms", symptomsRouter);
 
 // LISTENER
 const PORT = process.env.PORT || 3000;
