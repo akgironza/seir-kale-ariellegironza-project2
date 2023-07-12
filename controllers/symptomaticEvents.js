@@ -6,4 +6,3 @@ const SymptomaticEvents = require('../models/symptomaticEvents');
 const router = express.Router();
 
 // ROUTES
-

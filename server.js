@@ -3,7 +3,6 @@ require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
-const moment = require('moment');
 
 // EXPRESS APP
 const app = express();
@@ -16,7 +15,7 @@ app.use(express.static('public'));
 // ROUTES
 app.get('/', (req, res) => {
     res.send('hellooo world');
-})
+});
 
 // LISTENER
 const PORT = process.env.PORT || 3000;
