@@ -6,11 +6,12 @@ const SymptomaticEvents = require('../models/symptomaticEvents'); //import model
 const router = express.Router();
 
 // ROUTES
-app.get('/', (req, res) => {
-    res.send('hellooo world');
-});
 
 // INDEX
+router.get('/', async (req, res) => {
+    const symptomaticEvents = await SymptomaticEvents.find({});
+    res.render("symptomaticEvents/index.ejs", {symptomaticEvents});
+});
 
 // NEW
 
