@@ -1,24 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAME NAME NAME</title>
-    <%- include("../files.ejs") %>
-</head>
-<body>
-    <h1>NAME HERE</h1>
+<%- include("../partials/head.ejs") %>
 
-    <a href="/symptoms/new"><button>Log New Symptomatic Event</button></a>
+<body>
+    <h1 id="myzebrasx-header">myZebraSymptoms Tracker</h1>
+
+    <a href="/symptoms/new"><button class="log-new-button">Log New Symptomatic Event</button></a>
     
-    <ul>
+    <div class="symptomaticevent-logs">
         <% for(let i = 0; i < symptoms.length; i++){ %>
 
-            <li><a href="/symptoms/<%= symptoms[i]._id %>"><%= symptoms[i].description %></a></li>
+            <br>
+            <p>
+                <div class="log-leftside">
+                    <h3><a href="/symptoms/<%= symptoms[i]._id %>"><%= symptoms[i].description %></a></h3>
+                    Started: <%= symptoms[i].startTime %> <br>
+                    Ended: <%= symptoms[i].endTime %>
+                </div>
+                
+                <div class="log-rightside">
+                    Treated? <%= symptoms[i].treated %>
+                </div>
+
+            </p>
 
         <% } %>
-    </ul>
+    </div>
     
 </body>
 </html>
