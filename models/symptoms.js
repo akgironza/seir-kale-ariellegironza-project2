@@ -2,8 +2,8 @@
 const mongoose = require('./connection');
 
 // Set schema variable
-const symptomaticEventSchema = new mongoose.Schema({
-    symptom: String,
+const symptomSchema = new mongoose.Schema({
+    description: String,
     startTime: Date,
     endTime: Date,
     treated: Boolean,
@@ -11,7 +11,7 @@ const symptomaticEventSchema = new mongoose.Schema({
 });
 
 // Create Mongoose model based on schema
-const SymptomaticEvents = mongoose.model('symptomaticEvent', symptomaticEventSchema);
+const Symptoms = mongoose.model('symptom', symptomSchema);
 
 // Export model
-module.exports = SymptomaticEvents
+module.exports = Symptoms;
