@@ -1,10 +1,11 @@
 // IMPORT DEPENDENCIES
 const express = require("express"); //import expresss library
 const Symptoms = require("../models/symptoms"); //import model
-// const app = express(); //express application object
+
 
 // ROUTER
 const router = express.Router();
+
 
 // ROUTES
 
@@ -20,6 +21,9 @@ router.get("/", async (req, res) => {
 });
 
 // NEW
+router.get("/new", (req, res) => {
+    res.render("symptoms/new.ejs");
+});
 
 // DESTROY
 
