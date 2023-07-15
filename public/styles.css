@@ -11,14 +11,13 @@ body {
 }
 
 .symptomaticevent-logs{
+    display: flex;
 }
 
-.log-leftside{
-}
-
-.log-rightside{
+.log-leftside, .log-rightside{
+    flex: 50%;
 }
 
 #new-log-form{
-    
+
 }

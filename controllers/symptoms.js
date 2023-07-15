@@ -44,7 +44,6 @@ router.put("/:id", async (req, res) => {
 
 // Create - POST - log new symptomatic event - /symptoms
 router.post("/", async (req, res) => {
-
     req.body.treated = req.body.treated === "on" ? true : false
     await Symptoms.create(req.body)
     res.redirect("/symptoms")

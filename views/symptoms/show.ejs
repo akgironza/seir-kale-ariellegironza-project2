@@ -8,9 +8,9 @@
     <div class="focusedsx-rightside">
         <ul>
             <li><b>Symptom:</b> <%= symptom.description %></li>
-            <li><b>Start Time:</b> <%= symptom.startTime %></li>
-            <li><b>End Time:</b> <%= symptom.endTime %></li>
-            <!-- <li><b>Duration:</b> <%= symptom.endTime %></li>             -->
+            <li><b>Start Time:</b> <%= symptom.startTime.toUTCString() %></li>
+            <li><b>End Time:</b> <%= symptom.endTime.toUTCString() %></li>
+
         </ul>
     </div>
         

@@ -5,13 +5,25 @@
 
     <h2>Edit <%=symptom.description%> Event</h2>
 
-    <form action="/symptoms/<%= id %>?_method=PUT" method="post">
-        <input type="text" name="description" placeholder="symptom experienced" value="<%= symptom.description %>"/>
-        <!-- START TIME <input type="" name="start time" /> -->
-        <!-- END TIME <input type="" name="end time" /> -->
-        <input type="checkbox" name="treated" value="<%= symptom.treated ? "checked" : ""%>"/>
-        <input type="text" name="treatment" placeholder="treatment used" value="<%= symptom.treatment %>"/>
-        <input type="submit" value="Edit <%= symptom.description %> Event"/>
+    <form action="/symptoms/<%= id %>?_method=PUT" method="post" id="edit-log-form">
+        <label for="description">Symptom experienced:</label>
+        <input type="text" name="description" value="<%= symptom.description %>"/><br>
+
+        <p><label for="startTime">When did the symptom start?:</label><br>
+        Start time previously logged as: <%= symptom.startTime.toLocaleString() %><br>
+        <input type="datetime-local" name="startTime" value="<%= symptom.startTime %>"><br></p>
+
+        <p><label for="endTime">When did the symptom end?:</label><br>
+        End time previously logged as: <%= symptom.endTime.toLocaleString() %><br>
+        <input type="datetime-local" name="endTime" value="<%= symptom.endTime %>"><br></p>
+
+        <p><label for="treated">Treated?</label>
+        <input type="checkbox" name="treated"/><br></p>
+
+        <label for="treatment">Treatment used:</label><br>
+        <input type="text" name="treatment" value="<%= symptom.treatment %>"/><br>
+        
+        <p><input type="submit" value="Edit <%= symptom.description %> Event"/></p>
 
     </form>
 
