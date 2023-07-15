@@ -44,7 +44,7 @@ router.put("/:id", async (req, res) => {
 
 // Create - POST - log new symptomatic event - /symptoms
 router.post("/", async (req, res) => {
-    
+
     req.body.treated = req.body.treated === "on" ? true : false
     await Symptoms.create(req.body)
     res.redirect("/symptoms")
@@ -54,14 +54,18 @@ router.post("/", async (req, res) => {
 router.get("/:id/edit", async (req, res) => {
     const id = req.params.id
     const symptom = await Symptoms.findById(id)
-    res.render("symptoms/edit.ejs", {symptom, id})
+    const started = await Symptoms.find({}).select("startTime")
+    const ended = await Symptoms.find({}).select("endTime")
+    res.render("symptoms/edit.ejs", {symptom, id, started, ended})
 })
 
 // Show - GET - shows one symptomatic event - /symptoms/:id
 router.get("/:id", async (req, res) => {
     const id = req.params.id
     const symptom = await Symptoms.findById(id)
-    res.render("symptoms/show.ejs", {symptom, id})
+    const started = await Symptoms.find({}).select("startTime")
+    const ended = await Symptoms.find({}).select("endTime")
+    res.render("symptoms/show.ejs", {symptom, id, started, ended})
 });
 
 

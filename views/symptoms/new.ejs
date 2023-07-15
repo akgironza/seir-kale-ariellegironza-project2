@@ -5,16 +5,23 @@
     
     <h2>Log A New Symptomatic Event</h2>
     
-    <form action="/symptoms" method="post">
-        <input type="text" name="description" placeholder="symptom experienced"/>
-        <!-- START TIME <input type="" name="start time" /> -->
-        <!-- END TIME <input type="" name="end time" /> -->
-        <input type="date" name="start date">
-        <input type="time" name="start time">
-        <input type="date" name="end date"> 
-        <input type="time" name="end time">       
-        <input type="checkbox" name="treated"/>
-        <input type="text" name="treatment" placeholder="treatment used"/>
+    <form action="/symptoms" method="post" id="new-log-form">
+
+        <label for="description">Symptom experienced:</label>
+        <input type="text" name="description" placeholder="symptom"/><br>
+        
+        <label for="startTime">When did the symptom start?:</label><br>
+        <input type="datetime-local" name="startTime"><br>
+
+        <label for="endTime">When did the symptom end?:</label><br>
+        <input type="datetime-local" name="endTime"><br>
+        
+        <label for="treated">Treated?</label>
+        <input type="checkbox" name="treated"/><br>
+
+        <label for="treatment">Treatment used:</label><br>
+        <input type="text" name="treatment" placeholder="treatment used"/><br>
+
         <input type="submit" value="Finish"/>
 
     </form>
