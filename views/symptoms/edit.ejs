@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Symptomatic Events</title>
-    <%- include("../files.ejs") %>
-</head>
+<%- include("../partials/head.ejs") %>
+
 <body>
-    <h1>NAME OF APPPPP</h1>
+    <h1 id="myzebrasx-header">myZebraSymptoms Tracker</h1>
 
     <h2>Edit <%=symptom.description%> Event</h2>
+
     <form action="/symptoms/<%= id %>?_method=PUT" method="post">
         <input type="text" name="description" placeholder="symptom experienced" value="<%= symptom.description %>"/>
         <!-- START TIME <input type="" name="start time" /> -->
         <!-- END TIME <input type="" name="end time" /> -->
-        <input type="checkbox" name="treated" <%= symptom.treated ? "checked" : "" %>/>
-        <input type="text" name="treatment" placeholder="treatment used" value="<%= symptom.treatment %>"/> 
+        <input type="checkbox" name="treated" value="<%= symptom.treated ? "checked" : ""%>"/>
+        <input type="text" name="treatment" placeholder="treatment used" value="<%= symptom.treatment %>"/>
         <input type="submit" value="Edit <%= symptom.description %> Event"/>
 
     </form>
-
 
 </body>
 </html>

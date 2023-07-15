@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Symptoms</title>
-    <%- include("../files.ejs") %>
-</head>
-<body>
-    <h1>NAME NAME NAME</h1>
+<%- include("../partials/head.ejs") %>
 
+<body>
+    <h1 id="myzebrasx-header">myZebraSymptoms Tracker</h1>
+    
     <h2>Log A New Symptomatic Event</h2>
+    
     <form action="/symptoms" method="post">
         <input type="text" name="description" placeholder="symptom experienced"/>
         <!-- START TIME <input type="" name="start time" /> -->
