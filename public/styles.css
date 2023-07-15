@@ -5,19 +5,41 @@ body {
 }
 
 #myzebrasx-header {
+    background-color: black;
+    color: white;
+    text-align: center;
 }
 
-.log-new-button{
+button, #submit-delete {
+    background-color: white;
+    border: 1px solid;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: #222222 0 0 0 0.5px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 40px;
+    position: relative;
 }
-
+#logs-separator{
+    width: 90%;
+    align-items: center;
+}
 .symptomaticevent-logs{
-    display: flex;
+    position: relative;
+    text-align: center;
 }
 
-.log-leftside, .log-rightside{
-    flex: 50%;
+.log-leftside{
+}
+
+.log-rightside{
 }
 
 #new-log-form{
 
+}
+
+@media screen and (max-width: 600px) {
 }
