@@ -5,22 +5,20 @@
     
     <h2 class="symptomaticevent-head">Symptomatic Event</h2>
     
-    <div class="focusedsx-rightside">
-        <ul>
-            <li><b>Symptom:</b> <%= symptom.description %></li>
-            <li><b>Start Time:</b> <%= symptom.startTime.toUTCString() %></li>
-            <li><b>End Time:</b> <%= symptom.endTime.toUTCString() %></li>
-
-        </ul>
-    </div>
+    <div class="focusedsx-summary">
+        <div class="focusedsx-rightside">
+            <b>Symptom:</b> <%= symptom.description %><br>
+            <b>Start Time:</b> <%= symptom.startTime.toUTCString() %><br>
+            <b>End Time:</b> <%= symptom.endTime.toUTCString() %><br>
+        </div>
         
-    <div class="focusedsx-leftside">
-        <p>
-            <b>Treated:</b> <%= symptom.treated %><br>
-            <b>Treatment:</b> <%= symptom.treatment %>
-        </p>
+        <div class="focusedsx-leftside">
+            <p>
+                <b>Treated:</b> <%= symptom.treated %><br>
+                <b>Treatment:</b> <%= symptom.treatment %>
+            </p>
+        </div>
     </div>
-
     
     <p><a href="/symptoms/<%= id %>/edit"><button>EDIT this logged event</button></a></p>
     <form action="/symptoms/<%= id %>?_method=DELETE" method="post">

@@ -13,17 +13,19 @@
             <br>
             <p>
                 <div class="log-leftside">
-                    <h3><a href="/symptoms/<%= symptoms[i]._id %>"><%= symptoms[i].description %></a></h3>
-                    Started: <%= started[i].startTime.toLocaleString() %><br>
-                    Ended: <%= ended[i].endTime.toLocaleString() %>
+                    <h3 id="symptom-name"><a href="/symptoms/<%= symptoms[i]._id %>"><%= symptoms[i].description %></a></h3>
+                    <u>Started:</u> <%= started[i].startTime.toLocaleString() %><br>
+                    <u>Ended:</u> <%= ended[i].endTime.toLocaleString() %>
                 </div>
+            </p>
                 
                 <div class="log-rightside">
+                    <p>
                     Treated? <%= symptoms[i].treated %>
+                    </p>
                 </div>
                 <hr id="logs-separator">
 
-            </p>
 
         <% } %>
     </div>
