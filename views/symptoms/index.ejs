@@ -14,8 +14,8 @@
             <p>
                 <div class="log-leftside">
                     <h3><a href="/symptoms/<%= symptoms[i]._id %>"><%= symptoms[i].description %></a></h3>
-                    Started: <%= symptoms[i].startTime %> <br>
-                    Ended: <%= symptoms[i].endTime %>
+                    Started: <%= started[i].startTime.toLocaleString() %> <br>
+                    Ended: <%= ended[i].endTime.toLocaleString() %>
                 </div>
                 
                 <div class="log-rightside">

@@ -16,8 +16,10 @@ const router = express.Router();
 
 // Index - GET - display all symptomatic events logged - /symptoms
 router.get("/", async (req, res) => {
-    const symptoms = await Symptoms.find({});
-    res.render("symptoms/index.ejs", {symptoms});
+    const symptoms = await Symptoms.find({})
+    const started = await Symptoms.find({}).select("startTime")
+    const ended = await Symptoms.find({}).select("endTime")
+    res.render("symptoms/index.ejs", {symptoms, started, ended});
 });
 
 // New - GET - render form to log new symptomatic event - /symptoms/new
@@ -37,11 +39,12 @@ router.put("/:id", async (req, res) => {
     const id = req.params.id
     req.body.treated = req.body.treated === "on" ? true : false
     await Symptoms.findByIdAndUpdate(id, req.body)
-    res.redirect("/animal");
+    res.redirect("/symptoms");
 });
 
 // Create - POST - log new symptomatic event - /symptoms
 router.post("/", async (req, res) => {
+    
     req.body.treated = req.body.treated === "on" ? true : false
     await Symptoms.create(req.body)
     res.redirect("/symptoms")
